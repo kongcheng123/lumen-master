@@ -41,6 +41,7 @@ class UserController extends BaseController
         }
     }
 
+    //获取随机值
     public function getRandom(){
         // 密码字符集，可任意添加你需要的字符
         $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_ []{}<>~`+=,.;:/?|';
@@ -54,6 +55,17 @@ class UserController extends BaseController
             $password .= $chars[ mt_rand(0, strlen($chars) - 1) ];
         }
         return $password;
+    }
+
+    //测试token
+    public function checkToken(Request $request){
+        $token=$_POST['token'];
+        $token=Token::where(['content'=>$token])->first();
+        if($token!=null){
+            return 'success';
+        }else{
+            return 'failed';
+        }
     }
 
 

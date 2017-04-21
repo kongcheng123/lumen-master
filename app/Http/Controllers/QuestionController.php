@@ -16,6 +16,15 @@ class QuestionController extends BaseController
         $question->content=$request->input('content');
         $question->userId=$request->input('userId');
 
+        $file=$request->file('file');
+        if ($file) {
+            $name = $file->getClientOriginalName(); // 文件原名
+
+            $ext = $file->getClientOriginalExtension();     // 扩展名
+            $request->file('photo')->move('app/uploads/homework/');
+            $question->file=$name.$ext;
+        }
+
         $question->save();
         echo 'success';
     }

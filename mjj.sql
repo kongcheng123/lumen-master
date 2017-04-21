@@ -24,6 +24,7 @@ create table question(
 	description varchar(50) not null comment '描述',
 	content varchar(200) not null comment '内容',
 	userId int(11) not null comment '用户id',
+	file varchar(100) not null comment '文件',
 	created_at VARCHAR(25) not null comment '创建时间',
   updated_at VARCHAR(25) not null  COMMENT '更新时间'
 );
@@ -45,3 +46,5 @@ create table token(
 );
 
 alter table question add userId int(11) not null comment '用户id';
+
+alter table question add file varchar(100) not null comment '文件';
