@@ -17,8 +17,28 @@ $app->get('/version', function () use ($app) {
 
 $app->get('/','Controller@test');
 
+/*
+ * 用户路由
+ */
+
 $app->post('/addUser','UserController@addUser');
+
+$app->post('/checkUser','UserController@checkUser');
+
+
+/*
+ * 教师路由
+ */
 
 $app->post('/addTeacher','TeacherController@addTeacher');
 
+$app->post('/checkTeacher','TeacherController@checkTeacher');
 
+
+/*
+ *问题路由
+ */
+
+$app->post('/addQuestion','QuestionController@addQuestion');
+
+$app->get('/getAllQuestions','QuestionController@getAllQuestions');
