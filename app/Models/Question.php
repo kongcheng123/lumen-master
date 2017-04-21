@@ -9,5 +9,5 @@ class Question extends Model
     //指定表名
     protected $table='question';
 
-    protected $fillable = ['name','description','content'];
+    protected $fillable = ['name','description','content','userId'];
 }

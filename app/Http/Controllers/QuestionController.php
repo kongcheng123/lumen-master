@@ -14,6 +14,7 @@ class QuestionController extends BaseController
         $question->name=$request->input('name');
         $question->description=$request->input('description');
         $question->content=$request->input('content');
+        $question->userId=$request->input('userId');
 
         $question->save();
         echo 'success';
